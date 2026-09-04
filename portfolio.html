@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 포트폴리오</title>
+    <!-- 폰트: 애플 산돌고딕 네오 느낌을 내기 위해 Pretendard 사용 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <!-- Tailwind CSS (단일 파일 구성을 위한 CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appleWhite: '#FFFFFF',
+                        appleBlack: '#1D1D1F',
+                        appleBlue: '#0071E3',
+                        appleGray: '#F5F5F7',
+                        appleDark: '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 기본 설정 */
+        body {
+            background-color: #FFFFFF;
+            color: #1D1D1F;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            word-break: keep-all;
+        }
+        /* 이미지 기본 스타일 (대체 이미지용) */
+        .hero-image-placeholder {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-appleBlue selection:text-white">
+
+    <!-- 고정 내비게이션 바 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-appleGray/50">
+        <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight text-appleBlack">홍길동</span>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 래퍼 -->
+    <main class="pt-32 pb-16">
+        
+        <!-- 히어로 섹션 -->
+        <section class="flex flex-col items-center justify-center text-center px-4 mb-32">
+            <!-- 프로필 사진 영역 -->
+            <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-appleGray mb-8 shadow-sm">
+                <!-- 사용자의 실제 이미지 경로로 src를 변경하세요 -->
+                <!-- 예: <img src="./my-photo.jpg" alt="프로필 사진" class="hero-image-placeholder"> -->
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" 
+                     alt="프로필 사진" 
+                     class="hero-image-placeholder">
+            </div>
+            
+            <!-- 이름 (크고 굵게) -->
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-appleBlack mb-4">
+                홍길동
+            </h1>
+            
+            <!-- 한 줄 소개 (얇고 차분하게) -->
+            <p class="text-xl md:text-2xl font-light tracking-wide text-appleBlack mb-10 max-w-2xl">
+                세상의 비밀을 탐구하고, 내일의 문제를 해결하는 예비 과학자입니다.
+            </p>
+
+            <!-- 버튼 짝꿍 (채워진 버튼 + 테두리 버튼) -->
+            <div class="flex flex-row gap-4 items-center justify-center">
+                <a href="#portfolio" class="bg-appleBlue text-white px-7 py-3 rounded-full text-[15px] font-medium transition duration-300 hover:bg-blue-700">
+                    포트폴리오 보기
+                </a>
+                <a href="#contact" class="border-2 border-appleBlue text-appleBlue px-7 py-3 rounded-full text-[15px] font-medium transition duration-300 hover:bg-appleBlue/5">
+                    연락하기
+                </a>
+            </div>
+        </section>
+
+        <!-- 2단 카드 그리드 섹션 -->
+        <section id="portfolio" class="max-w-6xl mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                
+                <!-- 왼쪽 카드 (밝은 배경) -->
+                <div class="bg-appleGray rounded-[32px] p-10 md:p-14 flex flex-col items-center justify-between text-center min-h-[480px]">
+                    <div class="w-full flex-grow flex flex-col items-center justify-center">
+                        <span class="text-sm font-bold text-appleBlue tracking-widest uppercase mb-4">Interest</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-appleBlack tracking-tight mb-6 leading-snug">
+                            내가 관심 있는<br>과학 진로
+                        </h2>
+                        <p class="text-lg md:text-xl font-light text-appleBlack leading-relaxed max-w-sm">
+                            항공우주공학자가 되어 지구를 넘어선 우주의 끝없는 미지 세계를 개척하고 싶습니다.
+                        </p>
+                    </div>
+                    <!-- 카드 내부 버튼 짝꿍 -->
+                    <div class="flex flex-row gap-3 mt-10">
+                        <button class="bg-appleBlue text-white px-6 py-2.5 rounded-full text-sm font-medium transition duration-300 hover:bg-blue-700">
+                            탐구 일지
+                        </button>
+                        <button class="border border-appleBlue text-appleBlue px-6 py-2.5 rounded-full text-sm font-medium transition duration-300 hover:bg-appleBlue/5">
+                            자세히
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 오른쪽 카드 (어두운 배경) -->
+                <!-- 배경은 #000000, 텍스트는 허용된 컬러인 #F5F5F7 사용 -->
+                <div class="bg-appleDark rounded-[32px] p-10 md:p-14 flex flex-col items-center justify-between text-center min-h-[480px]">
+                    <div class="w-full flex-grow flex flex-col items-center justify-center">
+                        <span class="text-sm font-bold text-appleBlue tracking-widest uppercase mb-4">Vision</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-appleGray tracking-tight mb-6 leading-snug">
+                            이 진로가 풀<br>미래 문제
+                        </h2>
+                        <p class="text-lg md:text-xl font-light text-appleGray leading-relaxed max-w-sm opacity-90">
+                            우주 거주지 건설 기술을 연구하여 다가올 기후 위기와 인구 포화 상태로부터 인류를 구하겠습니다.
+                        </p>
+                    </div>
+                    <!-- 카드 내부 버튼 짝꿍 -->
+                    <div class="flex flex-row gap-3 mt-10">
+                        <button class="bg-appleBlue text-white px-6 py-2.5 rounded-full text-sm font-medium transition duration-300 hover:bg-blue-700">
+                            해결 방법
+                        </button>
+                        <button class="border border-appleBlue text-appleBlue px-6 py-2.5 rounded-full text-sm font-medium transition duration-300 hover:bg-appleBlue/20">
+                            연구 계획
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 맨 아래 푸터 -->
+    <footer class="w-full py-10 flex flex-col items-center justify-center text-center">
+        <p class="text-xs font-light text-appleBlack mb-1">홍길동</p>
+        <p class="text-xs font-light text-appleBlack opacity-60">2026. 09. 04 생성됨</p>
+    </footer>
+
+</body>
+</html>
